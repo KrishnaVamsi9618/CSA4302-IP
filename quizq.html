@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .quiz-header h2 {
+            color: #333;
+            font-size: 24px;
+        }
+        .quiz-question {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .quiz-options {
+            margin-bottom: 30px;
+        }
+        .quiz-options label {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz-options input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #5b5bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #3a3aff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h2>General Knowledge Quiz</h2>
+        </div>
+
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. Which planet is known as the Red Planet?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="Earth"> Earth</label>
+                    <label><input type="radio" name="q1" value="Mars"> Mars</label>
+                    <label><input type="radio" name="q1" value="Jupiter"> Jupiter</label>
+                    <label><input type="radio" name="q1" value="Saturn"> Saturn</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. What is the capital of France?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="London"> London</label>
+                    <label><input type="radio" name="q2" value="Paris"> Paris</label>
+                    <label><input type="radio" name="q2" value="Berlin"> Berlin</label>
+                    <label><input type="radio" name="q2" value="Madrid"> Madrid</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. Who wrote "Hamlet"?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3" value="Mark Twain"> Mark Twain</label>
+                    <label><input type="radio" name="q3" value="William Shakespeare"> William Shakespeare</label>
+                    <label><input type="radio" name="q3" value="Charles Dickens"> Charles Dickens</label>
+                    <label><input type="radio" name="q3" value="George Orwell"> George Orwell</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event){
+            event.preventDefault(); // Prevent form submission to reload the page
+            
+            let score = 0;
+
+            // Correct answers
+            const correctAnswers = {
+                q1: "Mars",
+                q2: "Paris",
+                q3: "William Shakespeare"
+            };
+
+            // Get user answers
+            const form = new FormData(this);
+
+            // Check each question
+            for (const [question, answer] of form.entries()) {
+                if (correctAnswers[question] === answer) {
+                    score++;
+                }
+            }
+
+            alert("You scored " + score + " out of 3!");
+        });
+    </script>
+
+</body>
+</html>

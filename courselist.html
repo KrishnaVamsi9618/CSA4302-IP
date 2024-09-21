@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Website</title>
+    <style>
+        body {
+            font-family: cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+
+        /* Header */
+        header {
+            background-image: url("header-background.jpeg");
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #5b5bff;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Academics Section */
+        .academics-section {
+            padding: 90px 10px;
+            text-align: center;
+            background-image: url("image.jpg");
+        }
+
+        .academics-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+  
+        .academics-card h3 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .academics-card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .academics-card .btn {
+            padding: 10px 20px;
+            background-color: #00ff33; /* Same as other buttons */
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .academics-card .btn:hover {
+            background-color: #41e600; /* Slightly darker on hover */
+        }
+        /* Academics Card */
+        .academics-card {
+            background-color: #fff; /* White background */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 300px; /* Adjust based on your design */
+            display: inline-block; /* Aligns cards next to each other */
+        }
+        .small-image {
+        width: 50%; /* Adjust the width as a percentage of its original size */
+        height: auto; /* This ensures the image maintains its aspect ratio */
+        }
+        .small-ima {
+        width: 20%; /* Adjust the width as a percentage of its original size */
+        height:20%; /* This ensures the image maintains its aspect ratio */
+        }
+
+        .academics-card h3 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .academics-card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .academics-card .btn {
+            padding: 10px 20px;
+            background-color: #04fa35; /* Same as other buttons */
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .academics-card .btn:hover {
+            background-color: #41e600; /* Slightly darker on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>LearnWell TuitionCenter</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <li><a href="source.html">Home</a></li>
+        <li><a href="courselist.html">Courses</a></li>
+        <li><a href="acadquiz.html">Practices</a></li>
+        <li><a href="practice.html">Academics</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="source1.html">login</a></li>
+    </nav>
+
+    <!-- Academics Section -->
+    <section class="academics-section" id="academics">
+        <h2>Courses</h2>
+
+        <div class="academics-card">
+            <img src="c.jpg" alt="C" class="small-image">
+            <h3>C programming</h3>
+            <p>Basic level of programming</p>
+            <button class="btn">99</button>
+        </div>
+
+        <div class="academics-card">
+            <img src="web.jpg" alt="web" class="small-image">
+            <h3>Web Development</h3>
+            <p>Helps to create webpages</p>
+            <button class="btn">2000</button>
+        </div>
+
+        <div class="academics-card">
+            <img src="java.jpg" alt="java" class="small-image">
+            <h3>Java programming</h3>
+            <p>helps to learn in OOps concepts</p>
+            <button class="btn">199</button>
+        </div>
+        
+        <div class="academics-card">
+            <img src="js.jpg" alt="javascript" class="small-image">
+            <h3>Java Script</h3>
+            <p>Helps in web development</p>
+            <button class="btn">250</button>
+        </div>
+
+
+        <div class="academics-card">
+            <img src="html.jpg" alt="C" class="small-image">
+            <h3>C programming</h3>
+            <p>Basic level of programming</p>
+            <button class="btn">99</button>
+        </div>
+
+        <div class="academics-card">
+            <img src="cloud.jpg" alt="web" class="small-image">
+            <h3>Web Development</h3>
+            <p>Helps to create webpages</p>
+            <button class="btn">2000</button>
+        </div>
+
+        <div class="academics-card">
+            <img src="java.jpg" alt="java" class="small-image">
+            <h3>Java programming</h3>
+            <p>helps to learn in OOps concepts</p>
+            <button class="btn">199</button>
+        </div>
+        
+    </section>
+</body>
+</html>

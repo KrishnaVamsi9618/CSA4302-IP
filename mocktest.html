@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test Paper</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .test-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .test-header h2 {
+            color: #333;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .test-header h4 {
+            color: #777;
+            font-size: 18px;
+        }
+        .question-section {
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .options {
+            margin-bottom: 25px;
+        }
+        .options label {
+            display: block;
+            padding: 8px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="test-container">
+        <div class="test-header">
+            <h2>Mock Test Paper</h2>
+            <h4>Subject: General Knowledge</h4>
+        </div>
+
+        <form id="mockTestForm">
+            <!-- Question 1 -->
+            <div class="question-section">
+                <div class="question">1. What is the capital city of Australia?</div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="Sydney"> Sydney</label>
+                    <label><input type="radio" name="q1" value="Canberra"> Canberra</label>
+                    <label><input type="radio" name="q1" value="Melbourne"> Melbourne</label>
+                    <label><input type="radio" name="q1" value="Brisbane"> Brisbane</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-section">
+                <div class="question">2. Who discovered penicillin?</div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="Marie Curie"> Marie Curie</label>
+                    <label><input type="radio" name="q2" value="Alexander Fleming"> Alexander Fleming</label>
+                    <label><input type="radio" name="q2" value="Louis Pasteur"> Louis Pasteur</label>
+                    <label><input type="radio" name="q2" value="Isaac Newton"> Isaac Newton</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-section">
+                <div class="question">3. Which is the longest river in the world?</div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="Amazon River"> Amazon River</label>
+                    <label><input type="radio" name="q3" value="Nile River"> Nile River</label>
+                    <label><input type="radio" name="q3" value="Yangtze River"> Yangtze River</label>
+                    <label><input type="radio" name="q3" value="Mississippi River"> Mississippi River</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-section">
+                <div class="question">4. In what year did World War I begin?</div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="1912"> 1912</label>
+                    <label><input type="radio" name="q4" value="1914"> 1914</label>
+                    <label><input type="radio" name="q4" value="1916"> 1916</label>
+                    <label><input type="radio" name="q4" value="1918"> 1918</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-section">
+                <div class="question">5. What is the largest desert in the world?</div>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="Sahara Desert"> Sahara Desert</label>
+                    <label><input type="radio" name="q5" value="Antarctic Desert"> Antarctic Desert</label>
+                    <label><input type="radio" name="q5" value="Gobi Desert"> Gobi Desert</label>
+                    <label><input type="radio" name="q5" value="Arabian Desert"> Arabian Desert</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Answers</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("mockTestForm").addEventListener("submit", function(event){
+            event.preventDefault(); // Prevent page reload
+
+            let score = 0;
+            const correctAnswers = {
+                q1: "Canberra",
+                q2: "Alexander Fleming",
+                q3: "Nile River",
+                q4: "1914",
+                q5: "Antarctic Desert"
+            };
+
+            const form = new FormData(this);
+
+            for (const [question, answer] of form.entries()) {
+                if (correctAnswers[question] === answer) {
+                    score++;
+                }
+            }
+
+            alert("You scored " + score + " out of 5!");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuition Website</title>
+    <style>
+        body {
+            font-family: cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+        header {
+            background-image: url("header-background.jpeg");
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #339833;
+            margin: 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #f2f2f7;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #1a0909;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #a5d5f5;
+        }
+
+        
+
+        /* Course Section */
+        .course-section {
+            background-image: url("study.jpg");
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .course-section h2 {
+            color: #12050e;
+            font-size: 36px;
+            margin-bottom: 20px;
+            display: inline-block;
+            background-color: #fbf7f7;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            vertical-align: top;
+        }
+
+        .course-card {
+            display: inline-block;
+            background-color: #fbf7f7;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(213, 135, 135, 0.2);
+            width: 300px;
+            vertical-align: text-top;
+        }
+
+        .course-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .course-card h3 {
+            font-size: 24px;
+            margin-top: 15px;
+        }
+
+        /* Enquiry Form */
+        .enquiry-form {
+            image-rendering: -moz-crisp-edges;
+            padding: 30px;
+            color: #9b0b0b;
+            text-align: center;
+        }
+
+        .enquiry-form h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group input {
+            width: 50%;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .form-group textarea {
+            width: 50%;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .form-submit {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #000;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>LearnWell TuitionCenter</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <li><a href="source.html">Home</a></li>
+        <li><a href="courselist.html">Courses</a></li>
+        <li><a href="acadquiz.html">Practices</a></li>
+        <li><a href="practice.html">Academics</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="source1.html">login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    
+
+    <!-- Courses Section -->
+    <section class="course-section">
+        <h2>Our Courses</h2></br>
+        <div class="course-card">
+            <img src="jee image.jpg" alt="Course Image">
+            <h3>JEE PREPARATION</h3>
+            <p>Expert-led sessions, customized study plans, and mock tests for the best preparation.</p>
+        </div>
+        <div class="course-card">
+            <img src="neet image.jpg" alt="Course Image">
+            <h3>NEET PREPARATION</h3>
+            <p>Comprehensive coaching with experienced tutors to guide your medical journey.</p>
+        </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <section class="enquiry-form">
+        <img src="idea.jpg" alt="tuition">
+        <h2>About LearnWell</h2>
+        <p>Our classes offer a robust curriculum fostering holistic development, preparing students for future challenges.</p>
+    </section>
+    <section class="course-section">
+        <h2>Our Courses</h2>
+        <div id="coursesContainer"></div>
+    </section>
+    
+    <script>
+        function fetchClasses() {
+            fetch('your-server-url/get_classes.php')
+                .then(response => response.json())
+                .then(data => {
+                    const coursesContainer = document.getElementById('coursesContainer');
+                    coursesContainer.innerHTML = '';
+    
+                    data.forEach(classItem => {
+                        const courseCard = `
+                            <div class="course-card">
+                                <h3>${classItem.class_name}</h3>
+                                <p>${classItem.description}</p>
+                            </div>`;
+                        coursesContainer.innerHTML += courseCard;
+                    });
+                });
+        }
+    
+        // Fetch classes on page load
+        window.onload = fetchClasses;
+    </script>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Tuition Academy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
